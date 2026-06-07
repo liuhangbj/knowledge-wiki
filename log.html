@@ -26,6 +26,30 @@
 <a href="index.html" class="back-link">← 返回首页</a>
 
 <h1>操作日志</h1>
+<h2>2025-06-07 — 吸收 llm-wiki-skill v3.6.2 方法论，全面重构</h2>
+<ul>
+<li>[x] 创建 Skill 文件：<code>llm-wiki-karpathy</code>（基于 sdyckjq-lab/llm-wiki-skill）</li>
+<li>[x] 重构目录结构：</li>
+<p>  - <code>concepts/</code> → <code>topics/</code>（51个主题页迁移）</p>
+<p>  - 新建 <code>comparisons/</code>、<code>synthesis/sessions/</code>、<code>queries/</code></p>
+<p>  - 新建 <code>purpose.md</code>、<code>.wiki-schema.md</code>、<code>.wiki-cache.json</code></p>
+<li>[x] 规范化 raw/ 目录：<code>raw/articles/</code>（90篇素材迁移）</li>
+<li>[x] 初始化素材缓存：55条 SHA256 记录</li>
+<li>[x] 批量添加置信度标注：80个 source 页面</li>
+<li>[x] 批量更新内部链接：<code>concepts/</code> → <code>topics/</code>（index.md、README.md、synthesis、entities、sources）</li>
+<li>[x] 更新 README.md 目录结构说明</li>
+<li>[x] 新增工作流规范：init、ingest、batch-ingest、query、digest、lint、status、graph、delete、crystallize</li>
+<li>[x] 引入核心机制：</li>
+<p>  - 置信度标注（EXTRACTED/INFERRED/AMBIGUOUS/UNVERIFIED）</p>
+<p>  - 两步式整理（Step 1 结构化分析 → Step 2 页面生成）</p>
+<p>  - 缓存去重（SHA256 + .wiki-cache.json）</p>
+<p>  - 别名词表（.wiki-schema.md 中定义）</p>
+<p>  - 关系类型词汇表（实现/依赖/对比/矛盾/衍生/因果/关联）</p>
+<p>  - 隐私自查（首次 ingest 前检查敏感信息）</p>
+<p>  - 查询持久化（wiki/queries/）</p>
+<p>  - 对话结晶化（wiki/synthesis/sessions/）</p>
+<p>  - 健康检查（孤立页面/断链/index一致性/矛盾信息/置信度抽查）</p>
+</ul>
 <h2>2026-01-20</h2>
 <ul>
 <li>[x] 创建专题目录结构</li>
